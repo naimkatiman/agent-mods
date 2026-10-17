@@ -33,3 +33,6 @@ tmp/
 logs/
 dashboard/token
 dashboard/instance.json
+.demo-site/
+.playwright-cli/
+output/

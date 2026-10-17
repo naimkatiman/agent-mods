@@ -1,0 +1,13 @@
+.demo-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 28px; background: var(--console); color: var(--console-ink); font: 13px/1.5 var(--f-text); }
+.demo-banner p { margin: 0; }
+.demo-banner strong { color: var(--signal); margin-right: 12px; }
+.demo-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.demo-banner a { color: var(--console-ink); text-underline-offset: 3px; }
+.demo-banner button { color: var(--console-ink); background: transparent; border: 1px solid var(--console-line); border-radius: 4px; padding: 5px 10px; cursor: pointer; font: inherit; }
+.demo-banner :focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+.walkthrough { max-width: 1120px; margin: 48px auto; padding: 0 24px; font-family: var(--f-text); }
+.walkthrough h1 { margin-bottom: 12px; font: 36px/1.2 var(--f-display); }
+.walkthrough p { margin: 18px 0; color: var(--ink-2); }
+.walkthrough a { color: var(--ink); }
+.walkthrough video { display: block; width: 100%; margin-top: 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--console); }
+@media (max-width: 600px) { .demo-banner { padding: 12px 18px; gap: 8px; } .demo-links { gap: 14px; } .demo-banner strong { display: block; } }
