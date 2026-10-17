@@ -1,0 +1,59 @@
+name: Deploy dashboard demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'demo/**'
+      - 'lib/dashboard/public/**'
+      - 'lib/mods/clawd-world.mjs'
+      - 'lib/mods/clawd-sprite.mjs'
+      - 'assets/done.wav'
+      - 'docs/media/**'
+      - 'test/demo-state.test.mjs'
+      - 'test/demo-build.test.mjs'
+      - '.github/workflows/demo-pages.yml'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Test demo state and asset build
+        run: node --test test/demo-state.test.mjs test/demo-build.test.mjs
+      - name: Build static demo
+        run: node demo/build.mjs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .demo-site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy demo to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
