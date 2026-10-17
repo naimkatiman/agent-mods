@@ -4,6 +4,27 @@ Shared session tracking, assumptions, ideas, design choices and a local dashboar
 
 Node.js 22 or newer. Zero runtime dependencies. Each computer keeps its own agent logins and local data.
 
+[Try the live interactive demo](https://naimkatiman.github.io/agent-mods/) | [Watch the short walkthrough](https://naimkatiman.github.io/agent-mods/walkthrough.html)
+
+The hosted demo uses fictional projects and sample sessions. Try ideas, assumption corrections and settings;
+changes stay in your browser, and Reset demo restores the sample. Install the local app to connect your own agents.
+
+![Desktop dashboard with sample agent sessions](docs/media/dashboard-overview.png)
+
+[![Animated dashboard walkthrough](docs/media/dashboard-demo.gif)](https://naimkatiman.github.io/agent-mods/walkthrough.html)
+
+<details>
+<summary>Mobile and assumption-review screenshots</summary>
+
+<img src="docs/media/dashboard-mobile.png" width="300" alt="The demo dashboard on a mobile screen">
+
+![Reviewing an assumption and adding a correction](docs/media/dashboard-assumptions.png)
+
+</details>
+
+Build the demo locally with `node demo/build.mjs` and serve `.demo-site/` using a static HTTP server.
+The builder copies an explicit public asset list. It never reads agent homes or the local runtime store.
+
 ## Install on another PC
 
 Use the GitHub Use this template button for your own repository, or clone directly.

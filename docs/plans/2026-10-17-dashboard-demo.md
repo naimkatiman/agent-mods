@@ -24,4 +24,6 @@ Implementation: add demo data/transport, a zero-dependency asset builder and foc
 update documentation in both repositories; ship the Pages workflow separately from product changes.
 Keep each commit within 15 files and 500 changed lines. Do not change the original checkout or installed agents.
 
-Status: implementation pending.
+Status: implementation and media verified locally. Full public suite: 395 passed, 7 reference checks skipped.
+Browser checks cover correction-to-rule, reload persistence, ideas, settings, reset and mobile layout.
+Production verification uses the Pages deployment commit, build-info.json and a deployment receipt.
