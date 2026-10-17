@@ -19,3 +19,7 @@ all distributable JavaScript syntax; secret scans of files and complete new Git 
 independent fresh-clone tests; original working-file hashes preserved.
 
 Scope: distribution and setup documentation. No live agent configuration, credential, runtime-data or original-checkout mutation.
+
+Fresh-clone verification on 2026-10-17 exposed CRLF conversion from Windows core.autocrlf settings.
+The repository now enforces LF text checkouts through .gitattributes and preserves audio as binary.
+Repeat verification uses new clones with the host's original Git settings.
