@@ -1,0 +1,18 @@
+{
+  "name": "agent-mods",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The claude-mods features (session tracker and monitor, assumption tracker, plain talk, idea shelf, prompt enhancer, design direction, Clawd) for Claude Code, Codex, Grok and Devin, over one shared store.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "agent-mods": "bin/agent-mods.mjs"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 \"test/**/*.test.mjs\"",
+    "check": "node bin/agent-mods.mjs doctor"
+  }
+}
